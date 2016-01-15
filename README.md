@@ -5,6 +5,6 @@ DNA routing for simple wireframe structures.
 - Download and unpack the source code.
 - Install python 3.4 (https://www.python.org/download/releases/3.4.3/)
 - Install kivy (https://kivy.org/#download)
-# Run
-The software can now be run by executing the bat file.
+- The software can now be run by executing the bat file.
+- The output file is a caDNAno "json" file. (https://github.com/cadnano/cadnano2.5)
 
