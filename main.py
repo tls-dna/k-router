@@ -37,19 +37,19 @@ Builder.load_string('''
             id: btn_generate_design
             size_hint_y: None
             height: 50
-            text: "generate design"
+            text: "Save to caDNAno"
             on_press: root.show_generate()
         Button:
             id: save_design
             size_hint_y: None
             height: 50
-            text: "save design"
+            text: "Save design"
             on_press: root.show_save()
         Button:
             id: load_design
             size_hint_y: None
             height: 50
-            text: "load design"
+            text: "Load design"
             on_press: root.show_load()
 
     HexCanvas:
@@ -152,11 +152,9 @@ def find_boundaries(connections):
 
 class MWindow(BoxLayout):
     def show_generate(self):
-        #content = SaveDialog(save=self.generate_design, cancel=self.dismiss_popup)
-        #self._popup = Popup(title="Save CaDNAno design", content=content,
-        #                   size_hint=(0.9, 0.9))
-        #self._popup.open()
-        self.generate_design("./", "base1.json")
+        content = SaveDialog(save=self.generate_design, cancel=self.dismiss_popup)
+        self._popup = Popup(title="Save caDNAno design", content=content, size_hint=(0.9, 0.9))
+        self._popup.open()
 
     def generate_design(self, fpath, filename):
         print("_" * 80)
@@ -203,8 +201,8 @@ class MWindow(BoxLayout):
         helix_position = generate_even_helix_position_sq()
         helices = []
         hex_grid = self.ids.hex_grid
-        n_helix = int(hex_grid.vvhelix_id / 2)   # reduce(max, map(max, design)) / 2 + 1
-        #change to be reasonable
+        n_helix = int(hex_grid.vvhelix_id / 2)  # reduce(max, map(max, design)) / 2 + 1
+        # change to be reasonable
         for i in range(n_helix):
             c, r = next(helix_position)
             helices.append(
