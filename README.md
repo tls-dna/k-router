@@ -8,4 +8,4 @@ DNA routing for simple wireframe structures.
 - The software can now be run by executing the bat file.
 - The output file is a caDNAno "json" file. (https://github.com/cadnano/cadnano2.5)
 
-2016
+2016 Dresden
